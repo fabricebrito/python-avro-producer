@@ -1,6 +1,6 @@
 # python-avro-producer
 
-## setup kafka
+## Setup kafka
 
 Use `docker-compose` to setup the kafka resources:
 
@@ -35,3 +35,7 @@ Open the URL: http://localhost:9021/clusters/Vyu6Ohb6TiuyyZz-jrF6tA/management/t
 ```console
 python consume_record.py --topic create-user-request --schema-file create-user-request.avsc
 ```
+
+### Next steps: add Grafana
+
+https://www.novatec-gmbh.de/en/blog/data-visualization-with-kafka-how-to-use-and-connect-grafana-to-your-cluster/
