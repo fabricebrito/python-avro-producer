@@ -1,0 +1,9 @@
+name: env-kafka
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ipykernel
+  - pip
+  - pip:
+    - "confluent_kafka[avro]"
