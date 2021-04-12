@@ -1,3 +1,37 @@
 # python-avro-producer
 
-For a tutorial on how this repository was built and how it works, go to this [article](https://medium.com/@billydharmawan/avro-producer-with-python-and-confluent-kafka-library-4a1a2ed91a24?source=friends_link&sk=b845dae5da1761d3a8c8f53d610eac33) (for Avro Producer part) and [this](https://medium.com/@billydharmawan/consume-messages-from-kafka-topic-using-python-and-avro-consumer-eda5aad64230?source=friends_link&sk=9d64b23845664a41710856270d81f36a) (for Avro Consumer part).
+## setup kafka
+
+Use `docker-compose` to setup the kafka resources:
+
+```console
+docker-compose up -d
+```
+
+## Create the python environment for the tutorial
+
+```console
+mamba env create -f environment.yml
+```
+
+Activate the environment with:
+
+```
+conda activate env-kafka
+```
+
+### Produce a few messages 
+
+```console
+ python send_record.py --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email4@email.com", "firstName": "Jane", "lastName": "Doe"}' --record-key a-key
+ python send_record.py --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email@email.com", "firstName": "Bob", "lastName": "Jones"}'
+ python send_record.py --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email2@email.com", "firstName": "Jane", "lastName": "Smith"}'
+```
+
+Open the URL: http://localhost:9021/clusters/Vyu6Ohb6TiuyyZz-jrF6tA/management/topics/create-user-request/message-viewer
+
+### Consume messages
+
+```console
+python consume_record.py --topic create-user-request --schema-file create-user-request.avsc
+```
