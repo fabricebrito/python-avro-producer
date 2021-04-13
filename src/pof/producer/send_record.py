@@ -28,7 +28,7 @@ def send_record(kwargs):
         default_value_schema=value_schema,
     )
 
-    key = kwargs["record_key"] if kwargs["record_key"] else str(uuid.uuid4())
+    key = kwargs.get("record_key") if kwargs.get("record_key") else str(uuid.uuid4())
     value = json.loads(kwargs["record_value"])
 
     try:

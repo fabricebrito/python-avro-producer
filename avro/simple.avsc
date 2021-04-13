@@ -1,0 +1,11 @@
+{
+  "namespace": "com.terradue.dataitem",
+  "type": "record",
+  "name": "dataitem",
+  "fields": [
+    {
+      "name": "identifier",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "namespace": "com.terradue.dataitem",
+  "type": "record",
+  "name": "dataitem",
+  "fields": [
+    {
+      "name": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "ext_event",
+      "type": "string",
+      "default": "NONE"
+    },
+    {
+      "name": "mission",
+      "type": "string"
+    },
+    {
+      "name": "subtype",
+      "type": "string",
+      "default": "NONE"
+    },  
+    {
+      "name": "service",
+      "type": "string"
+    },
+    {
+      "name": "service_version",
+      "type": "string"
+    },
+    {
+      "name": "ext_creation_time",
+      "type": "long",
+      "default": -1
+    },
+    {
+      "name": "creation_time",
+      "type": "long"
+    },
+    {
+      "name": "last_start_time",
+      "type": "long"
+    },
+    {
+      "name": "last_end_time",
+      "type": "long",
+      "default" : -1
+    }
+  ]
+}
