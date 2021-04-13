@@ -1,0 +1,68 @@
+{
+  "namespace": "com.terradue.dataitem",
+  "type": "record",
+  "name": "dataitem",
+  "fields": [
+    {
+      "name": "ref_time",
+      "type": "string"
+    },
+    {
+      "name": "latency",
+      "type": "string",
+      "default": "null"
+    },
+    {
+      "name": "service_version",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "default": "null"
+    },  
+    {
+      "name": "pipeline",
+      "type": "string"
+    },
+    {
+      "name": "duration",
+      "type": "string"
+    },
+    {
+      "name": "mission",
+      "type": "string",
+      "default": "null"
+    },
+    {
+      "name": "service",
+      "type": "string",
+      "default": "null"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "event_time",
+      "type": "string", 
+      "default": "null"
+    },
+    {
+      "name": "ext_event",
+      "type": "string"
+    },
+    {
+      "name":"mission_subtype",
+      "type": "string"
+    },
+    {
+      "name":"status",
+      "type":"string" 
+    },
+    {
+      "name": "info",
+     "type":"string"
+    }
+  ]
+}
