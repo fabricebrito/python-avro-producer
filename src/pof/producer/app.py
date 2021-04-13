@@ -43,7 +43,7 @@ from .send_record import send_record
 @click.pass_context
 def main(ctx, **kwargs):
 
-    send_record(kwargs)
+    send_record(**kwargs)
 
 if __name__ == "__main__":
     main()

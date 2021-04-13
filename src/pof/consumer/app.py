@@ -38,7 +38,7 @@ from .consume_record import consume_record
 @click.pass_context
 def main(ctx, **kwargs):
 
-    consume_record(kwargs)
+    consume_record(**kwargs)
 
 if __name__ == "__main__":
     main()

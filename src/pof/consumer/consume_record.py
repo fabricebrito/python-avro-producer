@@ -10,7 +10,7 @@ logging.basicConfig(
 )
 
 
-def consume_record(kwargs):
+def consume_record(**kwargs):
     default_group_name = "default-consumer-group"
 
     consumer_config = {

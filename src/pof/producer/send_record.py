@@ -13,7 +13,7 @@ logging.basicConfig(
 )
 
 
-def send_record(kwargs):
+def send_record(**kwargs):
 
     key_schema, value_schema = load_avro_schema_from_file(kwargs["schema_file"])
 
