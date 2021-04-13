@@ -29,6 +29,12 @@ from .consume_record import consume_record
     default="http://localhost:8081",
     help="Schema Registry url",
 )
+@click.option(
+    "--group-id",
+    "group_id",
+    required=False,
+    help="Consumer group id",
+)
 @click.pass_context
 def main(ctx, **kwargs):
 

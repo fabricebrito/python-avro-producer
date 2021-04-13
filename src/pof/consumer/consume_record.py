@@ -16,7 +16,7 @@ def consume_record(kwargs):
     consumer_config = {
         "bootstrap.servers": kwargs["bootstrap_servers"],
         "schema.registry.url": kwargs["schema_registry"],
-        "group.id": default_group_name,
+        "group.id": kwargs.get("group_id") if kwargs.get("group_id") else default_group_name,
         "auto.offset.reset": "earliest",
     }
 
