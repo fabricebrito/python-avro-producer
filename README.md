@@ -23,17 +23,17 @@ conda activate env-kafka
 ### Produce a few messages 
 
 ```console
- python send_record.py --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email4@email.com", "firstName": "Jane", "lastName": "Doe"}' --record-key a-key
- python send_record.py --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email@email.com", "firstName": "Bob", "lastName": "Jones"}'
- python send_record.py --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email2@email.com", "firstName": "Jane", "lastName": "Smith"}'
+produce --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email4@email.com", "firstName": "Jane", "lastName": "Doe"}' --record-key a-key
+produce send_record.py --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email@email.com", "firstName": "Bob", "lastName": "Jones"}'
+produce send_record.py --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email2@email.com", "firstName": "Jane", "lastName": "Smith"}'
 ```
 
-Open the URL: http://localhost:9021/clusters/
+Open the URL: http://localhost:9021/clusters/ and inspect the topic `create-user-request` messages (use offset 0)
 
 ### Consume messages
 
 ```console
-python consume_record.py --topic create-user-request --schema-file create-user-request.avsc
+consume --topic create-user-request --schema-file create-user-request.avsc
 ```
 
 ### Shutdown
