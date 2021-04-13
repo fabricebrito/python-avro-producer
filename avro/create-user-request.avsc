@@ -1,5 +1,5 @@
 {
-  "namespace": "io.codebrews.createuserrequest",
+  "namespace": "com.terradue.createuserrequest",
   "type": "record",
   "name": "CreateUserRequest",
   "fields": [

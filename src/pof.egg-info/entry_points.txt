@@ -1,0 +1,4 @@
+[console_scripts]
+consume = pof.consumer.app:main
+produce = pof.producer.app:main
+

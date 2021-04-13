@@ -28,7 +28,7 @@ conda activate env-kafka
  python send_record.py --topic create-user-request --schema-file create-user-request.avsc --record-value '{"email": "email2@email.com", "firstName": "Jane", "lastName": "Smith"}'
 ```
 
-Open the URL: http://localhost:9021/clusters/Vyu6Ohb6TiuyyZz-jrF6tA/management/topics/create-user-request/message-viewer
+Open the URL: http://localhost:9021/clusters/
 
 ### Consume messages
 
@@ -36,6 +36,29 @@ Open the URL: http://localhost:9021/clusters/Vyu6Ohb6TiuyyZz-jrF6tA/management/t
 python consume_record.py --topic create-user-request --schema-file create-user-request.avsc
 ```
 
+### Shutdown
+
+```console
+docker-compose down
+```
+
+Prune (optional)
+
+```console
+docker system prune -a --volumes --filter "label=io.confluent.docker"
+```
+
+
 ### Next steps: add Grafana
 
 https://www.novatec-gmbh.de/en/blog/data-visualization-with-kafka-how-to-use-and-connect-grafana-to-your-cluster/
+
+### Streams
+
+```console
+CREATE STREAM pageview_avro
+  (firstName VARCHAR,
+   email VARCHAR)
+  WITH (KAFKA_TOPIC='create-user-request',
+        VALUE_FORMAT='Avro');
+```
